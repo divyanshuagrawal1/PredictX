@@ -152,8 +152,8 @@ with st.form("machine_input_form"):
     col1, col2 = st.columns(2)
 
     with col1:
-        machine_type = st.selectbox(
-            "Machine Type",
+        product_type = st.selectbox(
+            "Product Type",
             ["L", "M", "H"]
         )
 
@@ -213,7 +213,7 @@ if predict_button:
 )
 
     input_data = pd.DataFrame({
-        "Type": [machine_type],
+        "Type": [product_type],
         "Air temperature [K]": [air_temperature],
         "Process temperature [K]": [process_temperature],
         "Rotational speed [rpm]": [rotational_speed],
@@ -444,7 +444,7 @@ if predict_button:
 st.subheader("How PredictX Works")
 
 st.write(
-    "PredictX analyzes five machine operating parameters and machine type "
+    "PredictX analyzes five machine operating parameters and product type "
     "using a trained XGBoost model."
 )
 
